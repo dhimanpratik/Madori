@@ -1,0 +1,106 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+/* html, body{
+	margin: 0;
+	padding: 0;
+	overflow-x:hidden;
+	//overflow-y:hidden;
+	min-height: 100%;
+	width: 100%;
+} */
+
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+.slider {
+	width: 98%;
+	height: 100%;
+}
+.slider-slide {
+  padding-bottom: 80px;
+  //padding: 80px;
+  color: #000;
+  background-color: #fff;
+  text-align: center;
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+<<<<<<< HEAD
+
+=======
+#addfurniture-modal-wrapper{
+//#item-margin-control .item{margin:1%;}
+//#item-margin-control-for-length-item{margin-left:1%;}	
+
+}
+/* .ion-input-select,
+select {
+  -webkit-appearance:none;
+  background-repeat: no-repeat;
+  background-color: rgba(0,0,0,0);  
+  border:thin solid #dddddd;
+  font-weight:300;
+  display:inline;
+  vertical-align:middle;
+  color:#333;
+  padding: auto 0;
+  overflow:hidden;
+  box-sizing:border-box;
+
+}
+.ion-input-select {
+  width:200px;
+  font-size:1rem;
+  background-image: url('img/select.png');
+  text-indent:20px;
+  padding:.5rem 0;
+  background-position:-2% 0%; 
+}
+
+option {
+ // background:#444;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+:focus {
+  outline:none;
+} */
+.col-45{
+	width: 45%;
+}
+.col-55{
+	width: 55%;
+}
+
+#Add-Doors-wrapper{
+	#margin-item{
+		margin: 2%;
+	}
+}
+>>>>>>> 5f53146b0f0d693eef2d59d4fc2dd0f95c5cbd03

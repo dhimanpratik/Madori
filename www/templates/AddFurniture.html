@@ -1,0 +1,32 @@
+<ion-view>
+<ion-nav-bar class="bar-dark">
+    <ion-nav-title>
+        Furniture
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear icon ion-android-add" ng-click="openModal()"> Add </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+    <ion-content padding="'true'" class="has-header">
+        <div class="card" ng-repeat="item in furniture">
+            <div class="item item-divider">
+                <p><b>{{item.name}}</b></p>
+            </div>
+            <div class="item item-text-wrap">
+                <p>Width = {{item.width}} feet</p>
+                <p>Length = {{item.length}} feet</p>
+                <p ng-if="item.door && (item.door!== 'None')">Door type = {{item.door}}</p>
+            </div>
+        </div>
+    </ion-content>
+        <div class="tabs tabs-dark tabs-icon-top">
+            <a class="tab-item">
+                <i class="icon ion-arrow-left-a " ng-click="goBack()"></i><!--ng-click="addWindows(user)"-->
+                BACK
+            </a>
+            <a class="tab-item">
+                <i class="icon ion-arrow-right-a" ng-click="layout(user)"></i>
+                NEXT
+            </a>
+        </div>
+</ion-view>

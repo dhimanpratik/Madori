@@ -1,0 +1,26 @@
+<ion-view>
+  <ion-nav-bar class="bar-dark">
+      <ion-nav-title>
+          Layout
+      </ion-nav-title>
+  </ion-nav-bar>
+    <ion-content padding="'true'" class="has-header" scroll="false">
+        <p>You can have the following layouts in your bedroom.</p>
+
+        <ion-slide-box does-continue="true"
+                         show-pager='true'
+                         slide-interval="3000"
+                         auto-play="false"
+                         on-slide-changed="slideChanged(index)">
+            <ion-slide ng-repeat="slide in slides">
+                <div class="slide"><img src="{{slide.src}}" alt=""/><h3>{{slide.name}}</h3></div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+    <div class="tabs tabs-dark tabs-icon-top">
+        <a class="tab-item">
+            <i class="icon ion-arrow-left-a" ng-click="goBack()"></i>
+            BACK
+        </a>
+    </div>
+</ion-view>

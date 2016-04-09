@@ -1,0 +1,64 @@
+<ion-view>
+<ion-nav-bar class="bar-dark">
+<ion-nav-title>
+      Room
+    </ion-nav-title>
+</ion-nav-bar>
+  <ion-content padding="'true'" class="has-header">
+    <form name="roomform" class="list">
+      <div>
+        <p>You can input the size of your room by providing the width and length below. All measurements will be taken in by feet, please make sure to provide measurements in feet.</p>
+      </div>
+      <div class="row">
+        <div class="col col-45">
+          <label class="item item-input">
+            <span class="input-label">Width</span>
+            <input
+            name="width"
+            type="tel"
+            placeholder="feet"
+            ng-model="room.width"
+            ng-change="drawRoom()"
+            required
+            ng-pattern="/^\d*\.?\d*$/" >
+          </label>
+        </div>
+
+        <div class="col col-30">
+          <label class="item item-input">
+            <span class="input-label">Length</span>
+            <input type="tel"
+            name="length"
+            placeholder="feet"
+            ng-model="room.height"
+            ng-change="drawRoom()"
+            required
+            ng-pattern="/^\d*\.?\d*$/">
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center form-error assertive"
+        ng-show="roomform.width.$error.pattern || roomform.length.$error.pattern">
+          Invalid Input
+        </div>
+        <div class="col text-center form-error assertive" 
+             ng-show="roomform.width.$error.required">
+          Width is required
+        </div>
+        <div class="col text-center form-error assertive" 
+             ng-show="roomform.length.$error.required && !roomform.width.$error.required">
+          Length is required
+        </div>
+      </div>  
+    </form>
+    <div id="room_canvas_holder" class="room-container"></div>
+  </ion-content>
+  <div class="tabs tabs-dark tabs-icon-top">
+    <a class="tab-item">
+      <i class="icon ion-arrow-right-a" ng-click="addDoors()"></i>
+        NEXT
+      <ion-nav-view name="AddDoors"></ion-nav-view>
+    </a>
+  </div>
+</ion-view>

@@ -1,0 +1,12 @@
+{
+  "name": "Madori",
+  "app_id": "a5f55f34",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

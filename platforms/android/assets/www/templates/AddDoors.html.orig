@@ -1,0 +1,98 @@
+<<<<<<< HEAD
+<ion-view>
+<ion-nav-bar class="bar-dark">
+<ion-nav-title>
+      Doors
+    </ion-nav-title>
+</ion-nav-bar>
+  <ion-content padding="'true'" class="has-header" scroll="false">
+    <form name="doorForm" class="list">
+      <div>
+        <p>You can size the door by providing the inputs for width and length and select where to position them.</p>
+=======
+<ion-view title="Add Doors" id="Add-Doors-wrapper">
+  <ion-content padding="'true'" class="has-header">
+    <form class="list">
+      <div>
+        <p>You can size the door by providing the inputs for width and length and select where to position them. Add to position more doors or minus to remove door.</p>
+>>>>>>> 5f53146b0f0d693eef2d59d4fc2dd0f95c5cbd03
+      </div>
+      <div class="row">
+        <div class="col-45">
+          <label class="item item-input" id="margin-item">
+            <span class="input-label">Width</span>
+<<<<<<< HEAD
+            <input
+            type="tel"
+            ng-model="door.width"
+            placeholder="in feet"
+            ng-change="addD()"
+            required
+            >
+=======
+            <input type="tel" ng-model="door.width" placeholder="feet" ng-change="addDoor()">
+>>>>>>> 5f53146b0f0d693eef2d59d4fc2dd0f95c5cbd03
+          </label>
+        </div>
+
+<!--         <div class="col col-30">
+            <select class="ion-input-select">
+              <option>Type</option>
+              <option>Single</option>
+              <option>Double</option>
+              <option>Sliding</option>
+            </select>
+        </div>   -->
+        <div class="col-55">
+          <label class="item item-input item-select" id="margin-item">
+            <span class="input-label">Type</span>
+            <select
+            id="doortypelist"
+            ng-model="item"
+            ng-change="addD()"
+            required>
+              <option>Single</option>
+              <option selected>Double</option>
+              <option>Sliding</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <button class="button button-full button-dark" ng-disabled="!doorForm.$valid" ng-click="addDoor()">
+      Add Door
+      </button>
+    </form>
+<<<<<<< HEAD
+
+    <div class="room-container">
+      <div  id="roomholder" style="border:5px solid black;width:90vw;height:90vw;margin: 0 auto;">
+            <div class="drag draggable">
+              <p>Door</p>
+            </div>
+=======
+    <div class="room-container" style="width:"{{roomwidth}}";height:"{{roomheight}}"" >
+      <canvas width="{{roomwidth}}" height="{{roomheight}}" style="border:5px solid black;"> </canvas>
+    </div>
+
+    <div class="row row-bottom">
+      <div class="col-10 col-offset-75">
+        <button class="button button-stable button-icon button-large icon-right ion-minus-circled"></button>
+      </div>
+      <div class="col-10">
+        <button class="button button-stable button-icon button-large icon-right ion-android-add-circle"></button>
+>>>>>>> 5f53146b0f0d693eef2d59d4fc2dd0f95c5cbd03
+      </div>
+    </div>
+
+  </ion-content>
+  <div class="tabs tabs-dark tabs-icon-top">
+    <a class="tab-item">
+      <i class="icon ion-arrow-left-a" ng-click="goBack()"></i><!--ng-click="bedroomSize(user)"-->
+      BACK
+    </a>
+    <a class="tab-item">
+      <i class="icon ion-arrow-right-a" ng-click="addWindows(user)"></i>
+      NEXT
+    </a>
+  </div>
+</ion-view>

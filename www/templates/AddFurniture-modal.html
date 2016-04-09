@@ -1,0 +1,92 @@
+  <ion-modal-view id="addfurniture-modal-wrapper">
+    <header class="bar bar-header bar-dark">
+		<h1 class="title">Add Furniture</h1>
+        <button class="button button-clear icon ion-android-close" ng-click="modal.hide()"> Cancel </button>
+	</header>
+    <ion-content padding="'true'" class="has-header">
+    	<form name="furnitureform" class="list">
+            <div id="width-control">
+                <p>Input the width, length and name of your furniture.</p>
+            </div>
+            <div class="row" id="item-margin-control">
+				<div class="col">
+				  <label class="item item-input item-select">
+				    <span class="input-label">Type</span>
+				    <select id="furnituretypelist"
+                            ng-model="item"
+                            ng-change="typeChange()">
+				      <option selected>Bed</option>
+				      <option>Chest</option>
+				      <option>Wardrobe</option>
+				      <option>Other</option>
+				    </select>
+				  </label>
+				</div>
+			</div>
+			<div class="row" id="item-margin-control" ng-if="furtype=='Other'">
+				<div class="col">
+					<label class="item item-input">
+                        <span class="input-label">Name of Furniture</span>
+                        <input type="text"
+                               placeholder="eg. Chair, Table, Desk"
+                               ng-model="f.name">
+                    </label>
+				</div>
+			</div>
+            <div class="row"
+                 ng-if="furtype=='Other' || furtype=='Bed' || furtype=='Chest' || furtype=='Wardrobe'">
+                <div class="col col-30">
+                    <label class="item item-input">
+                        <span class="input-label">Width</span>
+                        <input
+                        name="width"
+                        ng-model="f.width"
+                        type="tel"
+                        placeholder="feet"
+                        required
+                        ng-pattern="/^\d*\.?\d*$/" >
+                    </label>
+                </div>
+                <div class="col col-30" id="item-margin-control-for-length-item">
+                    <label class="item item-input">
+                        <span class="input-label">Length</span>
+                        <input
+                        type="tel"
+                        name="length"
+                        ng-model="f.len"
+                        placeholder="feet"
+                        required
+                        ng-pattern="/^\d*\.?\d*$/">
+                    </label>
+                </div>
+            </div>
+            <div class="row" ng-if="furtype=='Wardrobe' || furtype=='Other'">
+            <div class="col">
+             <label class="item item-input item-select" id="margin-item">
+                 <span class="input-label">Type of Door</span>
+            <select
+            name="select"
+            class="ion-input-select"
+            id="war-door-type">
+              <option selected>Single</option>
+              <option>Double</option>
+              <option>Sliding</option>
+             <option>None</option>
+            </select>
+        </div>
+      </div>
+            <div class="row">
+                <div class="col text-center form-error assertive text-center"
+                ng-show="furnitureform.width.$error.pattern || furnitureform.length.$error.pattern">
+                  Invalid Input
+                </div>
+                <div class="col text-center form-error assertive" ng-show="furnitureform.width.$error.required && furnitureform.width.$error.pattern || furnitureform.length.$error.required && furnitureform.length.$error.pattern">
+                  Width is required
+                </div>
+            </div>
+            <div class="row">
+                    <button class="button button-full button-dark" ng-click="addFurniture()">Add</button>
+            </div>
+        </form>
+    </ion-pane>
+  </ion-modal-view>

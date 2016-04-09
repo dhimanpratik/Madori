@@ -1,0 +1,76 @@
+<ion-view>
+<ion-nav-bar class="bar-dark">
+<ion-nav-title>
+      Doors
+    </ion-nav-title>
+</ion-nav-bar>
+  <ion-content padding="'true'" class="has-header" scroll="false">
+    <form name="doorForm" class="list">
+      <div>
+        <p>You can size the door by providing the inputs for width and type of the door.Drag to position them.</p>
+      </div>
+      <div class="row">
+        <div class="col col-45">
+          <label class="item item-input" id="margin-item">
+            <span class="input-label">Width</span>
+            <input
+            name="width"
+            type="tel"
+            ng-model="door.width"
+            placeholder="feet"
+            required
+            ng-pattern="/^\d*\.?\d*$/">
+          </label>
+        </div>
+
+        <div class="col col-45">
+             <label class="item item-input item-select" id="margin-item">
+                 <span class="input-label">Type</span>
+            <select
+            name="select"
+            id="doortypelist"
+            class="ion-input-select"
+            id="margin-item" ng-model="temp" ng-change="addD()">
+              <option selected>Single</option>
+              <option>Double</option>
+              <option>Sliding</option>
+            </select>
+        </div>
+      </div>
+      <div >
+        <div class="col form-error assertive text-center"
+        ng-show="doorForm.width.$error.pattern">
+          Invalid Input
+        </div>
+        <div class="col form-error assertive text-center"
+             ng-show="doorForm.width.$error.required">
+          Width is required
+        </div>
+      </div>
+    </form>
+        <button class="button button-full button-dark" ng-disabled="!doorForm.$valid" ng-click="addDoor()">
+      Add Door
+      </button>
+
+    <div class="room-container">
+      <div class="rhold"  id="roomholder" style="border:5px solid black;
+                                   width:{{cwidth}};
+                                   height:{{cheight}};
+                                   margin: 0 auto;
+                                   position:relative" >
+
+      </div>
+    </div>
+
+  </ion-content>
+  <div class="tabs tabs-dark tabs-icon-top">
+    <a class="tab-item">
+      <i class="icon ion-arrow-left-a" ng-click="goBack()"></i>
+      BACK
+    </a>
+    <a class="tab-item">
+      <i class="icon ion-arrow-right-a" ng-click="addWindows()"></i>
+      NEXT
+    </a>
+  </div>
+</ion-view>
